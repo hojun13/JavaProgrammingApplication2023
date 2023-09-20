@@ -5,6 +5,8 @@ public class Pikachu extends Pokemon{
         this.level = 1;
         this.setHp(35);
         this.name = "피카츄";
+        this.flyable = new NoFly(); // Association (Composition) <- has 관계(차를 한번에 파는거 따로 파는게 아닌)
+                                    // (Aggregation) <-이건 부품 갈아끼는거
     }
 
     @Override
