@@ -4,6 +4,7 @@ public class Pikachu extends Pokemon{
         System.out.println("피카피카");
         this.level = 1;
         this.attackRate = 55;
+        this.defenceRate= 40;
         this.setHp(35);
         this.name = "피카츄";
     //  this.flyable = new NoFly(); // Association (Composition) <- Has-a 관계(차를 한번에 파는거 따로 파는게 아닌)
