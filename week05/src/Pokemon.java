@@ -8,6 +8,8 @@ public abstract class Pokemon {
     protected String name;
     protected int attackRate;
     protected int defenceRate;
+    protected String skills[]; // 3가지 skill 예정
+    protected  int[] specialAttackRate;
 
     private static int pokemonCount = 0;  // 클래스(정적) 변수
 
