@@ -7,6 +7,8 @@ public class Pikachu extends Pokemon{
         this.attackRate = (int)(Math.random() * 6) + 50;
         this.defenceRate= 40;
         this.setHp(35);
+        this.skills = new String[]{"볼트테크", "아이언테일", "백만볼트"};
+        this.specialAttackRate = new int[]{70, 30, 50};
         this.name = "피카츄";
     //  this.flyable = new NoFly(); // Association (Composition) <- Has-a 관계(차를 한번에 파는거 따로 파는게 아닌)
                                     // (Aggregation) <-이건 부품 갈아끼는거

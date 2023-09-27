@@ -1,5 +1,3 @@
-
-
 //public final class Pokemon {
 public abstract class Pokemon {
     //private int level;
@@ -8,9 +6,9 @@ public abstract class Pokemon {
     protected String name;
     protected int attackRate;
     protected int defenceRate;
-    protected String skills[]; // 3가지 skill 예정
-    protected  int[] specialAttackRate;
 
+    protected String[] skills;  // 3가지 skill 추가 예정
+    protected int[] specialAttackRate;
     private static int pokemonCount = 0;  // 클래스(정적) 변수
 
     Flyable flyable;  // 연관 관계
@@ -57,9 +55,6 @@ public abstract class Pokemon {
         this.hp = hp;
     }
 
-    public abstract void attack();
-
-
     public void evolve(){  // 매개변수 제거
         if(this instanceof Pikachu){
             System.out.println("삐까삐까~");
@@ -87,19 +82,20 @@ public abstract class Pokemon {
         System.out.println("================");
     }
 
-    public  void attack(Pokemon targetPokemon, String skill) {
-        System.out.println(this.name + "이(가) " + targetPokemon.name + "에게 " +skill+ "공격 시전!");
-        int temporaryAttackRate = this.attackRate - targetPokemon.defenceRate;
-        if (temporaryAttackRate < 0 ){
+    public abstract void attack();
+
+    //public void attack(Pokemon targetPokemon, String skill){
+    public void attack(Pokemon targetPokemon, int skillNumber){
+        //System.out.println(this.name +"이(가) " + targetPokemon.name + "에게 "+ skill +" 공격 시전!");
+        System.out.println(this.name +"이(가) " + targetPokemon.name + "에게 "+ this.skills[skillNumber-1] +" 공격 시전!");
+        int temporaryAttackRate = (this.attackRate + this.specialAttackRate[skillNumber-1]) - targetPokemon.defenceRate;
+        if(temporaryAttackRate < 0)
             temporaryAttackRate = 0;
-        }
-        targetPokemon.hp = targetPokemon.hp - (temporaryAttackRate);
-        if(targetPokemon.hp <=0 ){
+        targetPokemon.hp = targetPokemon.hp - temporaryAttackRate;
+        if(targetPokemon.hp <= 0){
             System.out.println(targetPokemon.name + "은(는) 사망!");
-        }else {
-            System.out.println(targetPokemon.name+ "의 체력은" + targetPokemon.hp + "입니다");
+        }else{
+            System.out.println(targetPokemon.name + "의 체력은 " + targetPokemon.hp + "입니다");
         }
-
-
     }
 }
