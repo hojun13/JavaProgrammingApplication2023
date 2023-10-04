@@ -13,11 +13,11 @@ public class Pikachu extends Pokemon{
         this.setHp(35);
 //        this.skills = List.of(new String[]{"볼트테크", "아이언테일", "백만볼트"});
 //        this.specialAttackRate = List.of(new Integer[]{90, 60,40});
-        //this.skills = new ArrayList<>();
+        this.skills = new ArrayList<>();
         this.skills.add("백만볼트");
         this.skills.add("아이언테일");
         this.skills.add("백만볼트");
-        //this.specialAttackRate = new ArrayList<>();
+        this.specialAttackRate = new ArrayList<>();
         this.specialAttackRate.add(70);
         this.specialAttackRate.add(30);
         this.specialAttackRate.add(50);
