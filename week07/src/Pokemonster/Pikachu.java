@@ -1,6 +1,7 @@
 package Pokemonster;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Pikachu extends Pokemon{
@@ -11,17 +12,22 @@ public class Pikachu extends Pokemon{
         this.attackRate = (int)(Math.random() * 6) + 50;
         this.defenceRate= 40;
         this.setHp(35);
+        this.name = "피카츄";
 //        this.skills = List.of(new String[]{"볼트테크", "아이언테일", "백만볼트"});
 //        this.specialAttackRate = List.of(new Integer[]{90, 60,40});
-        this.skills = new ArrayList<>();
-        this.skills.add("백만볼트");
-        this.skills.add("아이언테일");
-        this.skills.add("백만볼트");
-        this.specialAttackRate = new ArrayList<>();
-        this.specialAttackRate.add(70);
-        this.specialAttackRate.add(30);
-        this.specialAttackRate.add(50);
-        this.name = "피카츄";
+//        this.skills = new ArrayList<>();
+//        this.skills.add("백만볼트");
+//        this.skills.add("아이언테일");
+//        this.skills.add("백만볼트");
+//        this.specialAttackRate = new ArrayList<>();
+//        this.specialAttackRate.add(70);
+//        this.specialAttackRate.add(30);
+//        this.specialAttackRate.add(50);
+
+
+        this.skills = new ArrayList<>(Arrays.asList("백만볼트","아이언테일","전광석화"));
+        this.specialAttackRate = new ArrayList<>(Arrays.asList(60,50,20));
+
     //  this.flyable = new Pokemonster.NoFly(); // Association (Composition) <- Has-a 관계(차를 한번에 파는거 따로 파는게 아닌)
                                     // (Aggregation) <-이건 부품 갈아끼는거
         this.flyable = f;
