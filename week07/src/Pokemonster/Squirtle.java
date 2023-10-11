@@ -1,6 +1,7 @@
 package Pokemonster;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Squirtle extends Pokemon{
@@ -15,16 +16,18 @@ public class Squirtle extends Pokemon{
         this.setHp(44);
 //        this.skills = List.of(new String[]{"웅크리기", "헤엄치기", "하이드로펌프"});
 //        this.specialAttackRate = List.of(new Integer[]{90, 60,40});
-        this.skills = new ArrayList<>();
-        this.skills.add("웅크리기");
-        this.skills.add("헤엄치기");
-        this.skills.add("하이드로펌프");
-        this.specialAttackRate = new ArrayList<>();
-        this.specialAttackRate.add(0);
-        this.specialAttackRate.add(10);
-        this.specialAttackRate.add(70);
         this.name = "꼬부기";
-        this.flyable = f; // Association, has-a ( Aggregation )
+//        this.skills = new ArrayList<>();
+//        this.skills.add("웅크리기");
+//        this.skills.add("헤엄치기");
+//        this.skills.add("하이드로펌프");
+//        this.specialAttackRate = new ArrayList<>();
+//        this.specialAttackRate.add(0);
+//        this.specialAttackRate.add(10);
+//        this.specialAttackRate.add(70);
+//        this.flyable = f; // Association, has-a ( Aggregation )
+        this.skills = new ArrayList<>(Arrays.asList("웅크리기","헤엄치기","하이드로펌프"));
+        this.specialAttackRate = new ArrayList<>(Arrays.asList(0,10,100));
     }
 
     @Override

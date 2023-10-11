@@ -1,6 +1,7 @@
 package Pokemonster;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Charizard extends Pokemon{
@@ -18,14 +19,18 @@ public class Charizard extends Pokemon{
         // this.specialAttackRate = new Integer[]{90, 60,40};
         //this.skills = List.of(new String[]{"화염방사", "용의숨결", "할퀴기"});
         //this.specialAttackRate = List.of(new Integer[]{90, 60,40});
-        this.skills = new ArrayList<>();
-        this.skills.add("화염방사");
-        this.skills.add("용의숨결");
-        this.skills.add("할퀴기");
-        this.specialAttackRate = new ArrayList<>();
-        this.specialAttackRate.add(90);
-        this.specialAttackRate.add(60);
-        this.specialAttackRate.add(40);
+//        this.skills = new ArrayList<>();
+//        this.skills.add("화염방사");
+//        this.skills.add("용의숨결");
+//        this.skills.add("할퀴기");
+//        this.specialAttackRate = new ArrayList<>();
+//        this.specialAttackRate.add(90);
+//        this.specialAttackRate.add(60);
+//        this.specialAttackRate.add(40);
+
+        this.skills = new ArrayList<>(Arrays.asList("화염방사","용의숨결","할퀴기"));
+        this.specialAttackRate = new ArrayList<>(Arrays.asList(50,80,20));
+
 
     }
 
