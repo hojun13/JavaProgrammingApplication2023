@@ -1,5 +1,6 @@
 package Pokemonster;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PokemonGame {
@@ -8,6 +9,8 @@ public class PokemonGame {
         System.out.println("포켓몬 게임을 시작합니다\n야생 포켓몬이 나타났습니다");
 //        System.out.println(Math.random());  // 0.0 <= x < 1.0
 //        System.out.println((int)(Math.random()*6)+1);  // 1 <= x <= 6
+
+
 
         // 적군 포켓몬스터 랜덤 생성
         Pokemon enemy = null;
@@ -25,6 +28,7 @@ public class PokemonGame {
             System.out.println("여기는 영원히 실행 안됩니다");
         }
 
+        try{
         // 플레이어 포켓몬스터 선택
         // Pokemonster.Pokemon player = new Pokemonster.Pokemon();  // 추상클래스의 객체는 생성 불가
         Pokemon player = null;  // 추상클래스의 변수 선언은 가능 (upcasting 용)
@@ -56,10 +60,19 @@ public class PokemonGame {
                 enemy.attack(player,(int)(Math.random() * 3)+1);
             }else if(menu == 2){
 
-            }else{
+            }else {
                 System.out.println("게임을 종료합니다.");
                 break;
+                }
             }
+        } catch (InputMismatchException err){
+            System.out.println("입력 값은 숫자입니다." );
+            System.out.println("예외 내용 : " + err.getMessage());
+        } catch (Exception err) {
+            System.out.println("예외가 발생했습니다.");
+            System.out.println("예외 내용 : " + err.getMessage());
+        } finally {
+            System.out.println("프로그램 종료 !");
         }
     }
 }
