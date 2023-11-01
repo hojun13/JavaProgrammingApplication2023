@@ -6,9 +6,11 @@ public interface Flyable {
 //    }
 
     //Pokemonster.Pokemon pokemon;
+    void fly();
+}
 
     //void fly();
-    default void fly(){
+/*    default void fly(){
         System.out.println("날아 갑니다!");
     }
-}
+}*/
