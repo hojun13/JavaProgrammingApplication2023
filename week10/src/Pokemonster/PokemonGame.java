@@ -7,29 +7,12 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PokemonGame {
+    public static Pokemon enemy = null;
     public static void main(String[] args) {
 //        System.out.println((int)(Math.random() * 11) + 74);
-        System.out.println("포켓몬 게임을 시작합니다\n야생 포켓몬이 나타났습니다");
+
 //        System.out.println(Math.random());  // 0.0 <= x < 1.0
 //        System.out.println((int)(Math.random()*6)+1);  // 1 <= x <= 6
-
-
-
-        // 적군 포켓몬스터 랜덤 생성
-        Pokemon enemy = null;
-        int enemyPick = (int)(Math.random()*3);
-        if(enemyPick == 0){
-            NoFly noFly = new NoFly();
-            enemy = new Pikachu(noFly);
-        }else if(enemyPick == 1){
-            NoFly noFly = new NoFly();
-            enemy = new Squirtle(noFly);
-        }else if(enemyPick == 2){
-            Wings wings = new Wings();
-            enemy = new Charizard(wings);
-        }else{
-            System.out.println("여기는 영원히 실행 안됩니다");
-        }
 
         try{
         // 플레이어 포켓몬스터 선택
@@ -53,6 +36,7 @@ public class PokemonGame {
             }
         }
 
+
         int menu, skillMenu;
         while(true){
             System.out.print("\t1) 전투   2) 도망   3) 종료 : ");
@@ -74,7 +58,8 @@ public class PokemonGame {
                     }
                 }
             }else if(menu == 2){
-
+                System.out.println("현재 지역을 탈출합니다");
+                produceEnemy(); // 적군 생성
             } else if (menu == 3) {
                 System.out.println("게임을 종료합니다.");
                 break;
@@ -97,6 +82,24 @@ public class PokemonGame {
         }
         finally {
             System.out.println("프로그램 종료 !");
+        }
+    }
+
+    private static void produceEnemy() {
+        // 적군 포켓몬스터 랜덤 생성
+        System.out.println("\n야생 포켓몬이 나타났습니다");
+        int enemyPick = (int)(Math.random()*3);
+        if(enemyPick == 0){
+            NoFly noFly = new NoFly();
+            enemy = new Pikachu(noFly);
+        }else if(enemyPick == 1){
+            NoFly noFly = new NoFly();
+            enemy = new Squirtle(noFly);
+        }else if(enemyPick == 2){
+            Wings wings = new Wings();
+            enemy = new Charizard(wings);
+        }else{
+            System.out.println("여기는 영원히 실행 안됩니다");
         }
     }
 }
