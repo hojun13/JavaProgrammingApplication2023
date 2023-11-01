@@ -58,6 +58,7 @@ public class PokemonGame {
                     }
                 }
             }else if(menu == 2){
+                player.performFly();
                 System.out.println("현재 지역을 탈출합니다");
                 produceEnemy(); // 적군 생성
             } else if (menu == 3) {
