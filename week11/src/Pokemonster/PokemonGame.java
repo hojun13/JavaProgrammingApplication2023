@@ -65,8 +65,13 @@ public class PokemonGame {
                 produceEnemy(); // 적군 생성
             } else if(menu == 3){
                 System.out.println("힐링 포션을 마십니다. 체력이  30hp 증가합니다");
-                UnaryOperator<Integer> healPotion = hp -> hp +30;
-                int newHp= healPotion.apply(player.getHp());
+                /*UnaryOperator<Integer> healPotion = hp -> hp +30;
+                int newHp= healPotion.apply(player.getHp());*/
+                /*Function<Integer,Integer> healPotion = hp -> hp+30;
+                int newHp = healPotion.apply(player.getHp());*/
+
+
+
                 player.setHp(newHp);
                 System.out.println(player.name +"의 체력은 " + player.getHp() + " 입니다!");
             }else if (menu == 4) {
