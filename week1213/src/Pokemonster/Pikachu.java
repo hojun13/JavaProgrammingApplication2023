@@ -4,6 +4,7 @@ import fly.Flyable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Pikachu extends Pokemon{
     public Pikachu(Flyable f) {
@@ -25,9 +26,16 @@ public class Pikachu extends Pokemon{
 //        this.specialAttackRate.add(30);
 //        this.specialAttackRate.add(50);
 
-
-        this.skills = new ArrayList<>(Arrays.asList("백만볼트","아이언테일","전광석화"));
-        this.specialAttackRate = new ArrayList<>(Arrays.asList(60,50,20));
+        this.skills = new HashMap<>();
+        this.skills.put(1,"백만볼트");
+        this.skills.put(2,"스파크");
+        this.skills.put(3,"전광석화");
+        this.specialAttackRate = new HashMap<>();
+        this.specialAttackRate.put("백만볼트",70);
+        this.specialAttackRate.put("스파크",60);
+        this.specialAttackRate.put("전광석화",40);
+//        this.skills = new ArrayList<>(Arrays.asList("백만볼트","아이언테일","전광석화"));
+//        this.specialAttackRate = new ArrayList<>(Arrays.asList(60,50,20));
 
     //  this.flyable = new fly.NoFly(); // Association (Composition) <- Has-a 관계(차를 한번에 파는거 따로 파는게 아닌)
                                     // (Aggregation) <-이건 부품 갈아끼는거

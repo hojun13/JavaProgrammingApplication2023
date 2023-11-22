@@ -4,6 +4,8 @@ import fly.Flyable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Squirtle extends Pokemon{
     public Squirtle(Flyable f) {
@@ -27,8 +29,10 @@ public class Squirtle extends Pokemon{
 //        this.specialAttackRate.add(10);
 //        this.specialAttackRate.add(70);
 //        this.flyable = f; // Association, has-a ( Aggregation )
-        this.skills = new ArrayList<>(Arrays.asList("웅크리기","헤엄치기","하이드로펌프"));
-        this.specialAttackRate = new ArrayList<>(Arrays.asList(0,10,100));
+        this.skills = new HashMap<>(Map.of(1,"물대포",2,"헤엄치기",3,"하이드로펌프"));
+        this.specialAttackRate = new HashMap<>(Map.of("물대포",40,"헤엄치기",20,"하이드로펌프",90));
+//        this.skills = new ArrayList<>(Arrays.asList("웅크리기","헤엄치기","하이드로펌프"));
+//        this.specialAttackRate = new ArrayList<>(Arrays.asList(0,10,100));
     }
 
     @Override
